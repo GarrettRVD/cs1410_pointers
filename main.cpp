@@ -4,6 +4,7 @@ using namespace std;
 const int LEN = 5;
 
 void Increment(int *inc);
+void IncrementArray(int *inc);
 
 int main()
 {
@@ -58,6 +59,13 @@ int main()
     cout << "value of i is: " << i << endl;
     cout << "value of the address living at pi is: " << *pi << endl;
 
+    // Update all elements of the array
+    IncrementArray(iarr);
+    for(int i = 0; i < LEN; i++)
+    {
+        cout << iarr[i] << endl;
+    }
+
     return 0;
 }
 
@@ -65,4 +73,13 @@ void Increment(int *inc)
 {
     // increment integer
     *inc += 1;
+}
+
+void IncrementArray(int *inc)
+{
+    for(int i = 0; i < LEN; i++)
+    {
+        // increment integer
+        *inc++ += 1;                // points at the element of the array
+    }
 }
